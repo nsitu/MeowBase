@@ -1,0 +1,204 @@
+/* Setting Roboto here assumes that Google Fonts is included. */
+body {
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* use flexbox to make the main area expand to fill the available space 
+this results in a "sticky" footer*/
+main{
+  flex: 1;
+}
+
+
+h1{
+  margin: 1rem;
+  font-weight: 300;
+  font-size: 3rem;
+  color: rgba(255,255,255,0.8);
+}
+
+
+#userBanner h2, #userBanner p{
+  color: rgba(255,255,255,0.8);
+  margin-left: 1rem;
+}
+
+
+
+nav{
+  background: rgba(0,0,0,0.4);
+} 
+
+.nav-item .direction{
+  display:none;
+}
+
+#banner{
+  background-image: url(/images/publicBanner.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 300px;
+}
+
+
+#userBanner{
+  background-image: url(/images/userBanner.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  min-height: 400px;
+}
+
+.alert .close{
+ text-decoration: none;
+ color: inherit;
+ font-size: 1.2em;
+ padding: 0 5px; 
+ cursor: pointer;
+}
+.alert .close:hover{
+  color: red;
+} 
+
+.btn-link.commentButton,
+.btn-link.pawButton{
+  text-decoration: none;
+}
+
+/* invert the colour of the paw button when it is active. */
+.btn-link.pawButton.active{
+  background: #0d6efd;
+  color: #ffffff;
+}
+
+/* adjust alignment of icons with text */
+.material-icons{
+  vertical-align: text-bottom;
+}
+
+/*
+.ProfilePicture{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: 50% 50%;
+}*/
+
+
+.MeowPicture{
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* 
+A 100% padding trick to make a responsive  square element for our avatar.   
+In the future we will be able to use aspect-ratio in CSS 
+See also: https://caniuse.com/mdn-css_properties_aspect-ratio
+*/
+.square{
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+}
+.ProfilePicture,
+.MeowUserAvatar{
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: 50% 50%;
+} 
+
+#meows form, 
+#meows .meow,
+#meows .comment{
+  border-bottom: 1px solid #ddd;
+}
+
+#profile .alert,
+#meows .alert{
+  position: fixed;
+  top: 10vw;
+  left: 10vw;
+  width: 80vw;
+  z-index: 10;
+}
+
+.niceDate{
+  color: #777;
+}
+
+footer {
+  background: #210;
+  color: #fff;    
+  padding: 1rem;
+  text-align: center;
+} 
+ 
+
+footer a{
+  color: #acdbe9;
+}
+
+footer a:hover{
+  color: #dbf1f8;
+}
+
+/* Start of loading spinner - see also:  https://loading.io/   */
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #cef;
+  border-color: #cef transparent #cef transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* End of Loading spinner. */
+
+
+/*
+Transitions used when adding and deleting meows and comments
+see also: https://v3.vuejs.org/guide/transitions-list.html#list-entering-leaving-transitions
+*/
+.meow-enter-active,
+.meow-leave-active,
+.comment-enter-active,
+.comment-leave-active {
+  transition: all 0.2s ease;
+}
+
+.meow-enter-from,
+.meow-leave-to,
+.comment-enter-from,
+.comment-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.commentUserFullName{
+  width: 100%;
+  font-size: 0.8em;
+}
