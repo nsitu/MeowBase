@@ -1,13 +1,7 @@
 deployment:
  tasks:
  # Make a MeowBase folder  in the user's home directory. 
- - mkdir -p ~/MeowBase
+ - mkdir -p ~/public_html/MeowBase
  # Copy Repository to MeowBase folder
- - cp -R * ~/MeowBase
- # Make sure that Apache can access the folder. 
- - chmod 777 ~/MeowBase
- # Create symbolic links to public assets
- - ln -s ~/MeowBase/public/index.php ~/public_html/index.php
- - ln -s ~/MeowBase/public/styles.css ~/public_html/styles.css
- - ln -s ~/MeowBase/public/logo.png ~/public_html/logo.png
- - ln -s ~/MeowBase/public/images ~/public_html/images
+ - cp -R * ~/public_html/MeowBase
+ # Make sure that Apache can access the folder
