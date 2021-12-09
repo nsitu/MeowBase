@@ -1,0 +1,6 @@
+#deployment:
+# tasks:
+# - export DEPLOYPATH=/home/ixd0000/public_html/
+# - mkdir $DEPLOYPATH
+# - mkdir -p $DEPLOYPATH
+# - cp -R public/* $DEPLOYPATH
