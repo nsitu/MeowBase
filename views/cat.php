@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-md-3" id="cat" style="margin-top: -20vh;">
         <div class="square">
-          <div class="ProfilePicture"  :style="{ backgroundImage: `url(${User.ProfilePicture})` }">
+          <div class="ProfilePicture"  :style="{ backgroundImage: `url(${this.root + User.ProfilePicture})` }">
           </div>
         </div> 
         <h2>{{ User.FullName }}</h2>
@@ -39,6 +39,7 @@
 Vue.createApp({ 
  data(){
     return {
+     root: '<?= App::root() ?>',
       User: <?= json_encode($user) ?> 
     }
  }
