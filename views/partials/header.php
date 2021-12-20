@@ -6,7 +6,7 @@
     <!-- The viewport meta tag helps setup a responsive mobile layout. -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= App::get('SiteName'); ?> - <?= App::get('PageTitle'); ?></title>
-    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="icon" type="image/png" href="<?= App::root(); ?>/icon.png" />
 
     <!-- Bootstrap CSS. See also: 
     https://getbootstrap.com/docs/5.1/getting-started/introduction/ -->
@@ -20,7 +20,7 @@
     <!-- Material Icons: https://fonts.google.com/icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- This stylesheet lives in our "public" folder -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="<?= App::root(); ?>/styles.css">
 
     <!-- we will use VueJS and Axios to make smart file uploads -->
     <script src="https://unpkg.com/vue@next"></script>
