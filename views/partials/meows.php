@@ -13,7 +13,7 @@ the UX is built with Bootstrap and VueJS.
   <form v-if="showMeowForm" method="post" class="py-3" @submit.prevent="saveMeow"> 
     <div class="form-group py-3">
       <div v-if="Meow.Picture">
-        <img :src="Meow.Picture" class="MeowPicture my-1" />
+        <img :src="this.root + Meow.Picture" class="MeowPicture my-1" />
       </div> 
       <textarea v-model="Meow.Body" name="Body" class="form-control"  rows="4" placeholder="Meow?">{{ Meow.Body }}</textarea>
     </div> 
@@ -55,7 +55,7 @@ the UX is built with Bootstrap and VueJS.
       <div class="row">
         <div class="col-2">
           <div class="square">
-            <div class="MeowUserAvatar"  :style="{ backgroundImage: `url(${Meow.User.ProfilePicture})` }">
+            <div class="MeowUserAvatar"  :style="{ backgroundImage: `url(${this.root + Meow.User.ProfilePicture})` }">
             </div>
           </div>
         </div> 
