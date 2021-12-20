@@ -6,8 +6,8 @@ class Request{
  
   // get the url 
   static function url(){
-    $url = trim($_SERVER['REQUEST_URI'], '/');
-    return str_replace( App::root(), '',  $url);
+    $url =  str_replace( App::root(), '',  $_SERVER['REQUEST_URI']);
+    return trim($url, '/');
   }
 
   static function method(){
