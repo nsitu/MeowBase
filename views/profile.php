@@ -50,7 +50,7 @@
           <!-- Javascript can do variable substitution as long as you use backticks to define the boundaries of a string. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#syntax  -->
             <div class="square" style="margin-top: -20vh;">
               <div class="ProfilePicture"
-                :style="{ backgroundImage: `url(${user.ProfilePicture})` }" >
+                :style="{ backgroundImage: `url(${this.root + user.ProfilePicture})` }" >
               </div>
             </div>
 
