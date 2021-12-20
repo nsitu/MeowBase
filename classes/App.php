@@ -8,6 +8,11 @@ class App{
   public static $log = null;  // a place to store user notices
   public static $User = null;      // a place to store the logged in user here.
 
+ 
+ public static function root(){
+   return self::get('root'); 
+ }
+ 
   // database connection makes use of environment variables (in Replit, use secrets)
   public static function pdo(){
     if ( self::$pdo ) return self::$pdo ; 
