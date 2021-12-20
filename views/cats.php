@@ -22,7 +22,7 @@
   <div class="row"> 
     <div v-for="(user, userKey) in users" :key="user.ID" class="cat col-3 p-3">
       <div class="square">
-        <div class="ProfilePicture"  :style="{ backgroundImage: `url(${user.ProfilePicture})` }">
+        <div class="ProfilePicture"  :style="{ backgroundImage: `url(${this.root + user.ProfilePicture})` }">
         </div>
       </div>  
       <h2 class="text-center">
@@ -40,17 +40,18 @@
 Vue.createApp({ 
  data(){
     return {
+      root: '<?= App::root(); ?>',
       users: {},  
       showLoading:true
     }
  },
  methods:{         
    profileLink : function(userKey){
-      return '/cats/'+this.users[userKey].ID;
+      return this.root+ '/cats/'+this.users[userKey].ID;
    }
  },  
   mounted () {
-    axios.get('/cats/json')
+    axios.get(this.root+'/cats/json')
       .then(response => {
         this.users = response.data;
         this.showLoading = false;
