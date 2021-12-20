@@ -140,7 +140,7 @@ Vue.createApp({
       /* here JavaScript sends the form data to PHP 
       with a little help from the axios HTTP library. 
       See also: https://axios-http.com/ */
-      axios.post('/profile', this.user)
+      axios.post(this.root + '/profile', this.user)
         .then(response => {
           console.log(response.data);
           if( typeof response.data == "string" ){ 
@@ -168,7 +168,7 @@ Vue.createApp({
      /* here JavaScript uploads our image file to PHP 
       with a little help from the axios HTTP library. 
       See also: https://axios-http.com/ */
-    axios.post('/profile', formData, {
+    axios.post(this.root + '/profile', formData, {
       header:{ 'Content-Type' : 'multipart/form-data' }
     }).then(response => { 
       if( ! response.data.url ){ 
