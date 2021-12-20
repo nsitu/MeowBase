@@ -65,7 +65,7 @@ the UX is built with Bootstrap and VueJS.
       </div>
       <div class="row my-1">
         <div class="col">
-          <img :src="this.root + Meow.Picture" class="MeowPicture my-1"  />
+          <img v-if="Meow.Picture" :src="this.root + Meow.Picture" class="MeowPicture my-1"  />
           <p>{{ Meow.Body }}</p> 
           
           <a :class="pawStyle(meowKey)" class="pawButton btn btn-link" @click="togglePaw(meowKey)">
