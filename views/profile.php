@@ -26,7 +26,7 @@
         red more about this here: https://v3.vuejs.org/guide/introduction.html#conditionals-and-loops  -->
       <div v-if="showProfile">
         <div class="square" style="margin-top: -20vh;">
-          <div class="ProfilePicture"  :style="{ backgroundImage: `url(${user.ProfilePicture})` }">
+          <div class="ProfilePicture"  :style="{ backgroundImage: `url(${this.root + user.ProfilePicture})` }">
           </div>
         </div> 
         <h2>{{ user.FullName }}</h2>
@@ -114,6 +114,7 @@
 Vue.createApp({ 
  data(){
     return {
+     root: '<?= App::root(); ?>',
       user: <?= App::User()->json_export(); ?>,
       modified: false,
       file:'',
