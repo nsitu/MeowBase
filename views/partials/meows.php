@@ -117,6 +117,7 @@ Along with "Just Now" as a the time of the Meow. */
 Vue.createApp({ 
  data(){
     return {
+      root: '<?= App::root(); ?>',
       User: {},
       Meows:{},
       Meow: {},
@@ -186,7 +187,7 @@ Vue.createApp({
   saveMeow(event){  
     this.showComment = null;
     if (this.modified){ 
-      axios.post('/meows', this.Meow)
+      axios.post(this.root + '/meows', this.Meow)
         .then(response => {
           console.log(response.data);
           if( typeof response.data == "string" ){ 
@@ -204,7 +205,7 @@ Vue.createApp({
   uploadFile(event){ 
     let formData = new FormData();  
     formData.append('file', event.target.files[0]); 
-    axios.post('/meows', formData, {
+    axios.post(this.root + '/meows', formData, {
       header:{ 'Content-Type' : 'multipart/form-data' }
     }).then(response => { 
       if( ! response.data.url ){ 
@@ -220,7 +221,7 @@ Vue.createApp({
    })
   }, 
   saveComment(key){   
-    axios.post('/comments', this.Meows[key].newComment )
+    axios.post(this.root + '/comments', this.Meows[key].newComment )
       .then(response => {        
         if( typeof response.data == "string" )  this.warn(response.data); 
         else if( ! response.data ) this.warn( "Unable to Add Comment");  
@@ -234,7 +235,7 @@ Vue.createApp({
   }, 
   deleteMeow(meowKey){  
     this.showComment = null;
-    axios.delete('/meows/'+this.Meows[meowKey].ID)
+    axios.delete(this.root + '/meows/'+this.Meows[meowKey].ID)
       .then(response => {  
         if( typeof response.data == "string" )  this.warn(response.data); 
         else if( ! response.data ) this.warn("Unable to Delete Meow"); 
@@ -243,7 +244,7 @@ Vue.createApp({
       .catch(error => console.log(error))  
   },
   deleteComment(meowKey, commentKey){
-    axios.delete('/comments/'+this.Meows[meowKey].Comment[commentKey].ID)
+    axios.delete(this.root + '/comments/'+this.Meows[meowKey].Comment[commentKey].ID)
       .then(response => {  
         if( typeof response.data == "string" )  this.warn(response.data); 
         else if( ! response.data )  this.warn("Unable to Delete Comment"); 
@@ -263,7 +264,7 @@ Vue.createApp({
     let pawIndex = this.Meows[meowKey].Paw.findIndex(e => e.User.ID === this.User.ID)
     // If a paw exists remove it. 
     if (pawIndex > -1){
-      axios.delete('/paws/'+this.Meows[meowKey].Paw[pawIndex].ID)
+      axios.delete(this.root + '/paws/'+this.Meows[meowKey].Paw[pawIndex].ID)
       .then(response => {  
         if( typeof response.data == "string" ) this.warn(response.data); 
         else if( ! response.data ) this.warn("Unable to Delete Paw"); 
@@ -274,7 +275,7 @@ Vue.createApp({
     // if no paw exists, add one. 
     else{
       let newPaw = this.newPaw(meowKey);
-      axios.post('/paws', newPaw )
+      axios.post(this.root + '/paws', newPaw )
       .then(response => {         
         if( typeof response.data == "string" ) this.warn(response.data); 
         else if( ! response.data )  this.warn("Unable to Add Paw"); 
@@ -304,9 +305,9 @@ Vue.createApp({
   },
    profileLink : function(meowKey, commentKey = null){
      // if a comment Key is given, link to the author of the comment
-    if (commentKey != null) return '/cats/'+this.Meows[meowKey].Comment[commentKey].User.ID;  
+    if (commentKey != null) return this.root + '/cats/'+this.Meows[meowKey].Comment[commentKey].User.ID;  
     // otherwise link to the author of the given meow
-    else return '/cats/'+this.Meows[meowKey].User.ID;
+    else return this.root + '/cats/'+this.Meows[meowKey].User.ID;
    }
  }, 
   watch: {
@@ -324,7 +325,7 @@ Vue.createApp({
   mounted () {
     this.User = this.currentUser();
     this.Meow = this.newMeow();
-    let dataURL = '/meows';  
+    let dataURL = this.root + '/meows';  
     if (this.profileID != false) dataURL += '/'+this.profileID; 
     if (this.profileID == false || this.profileID == this.User.ID) this.showMeowForm = true;
     
