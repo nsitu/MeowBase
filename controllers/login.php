@@ -14,8 +14,9 @@ if ( $_POST['Login'] ) {
       // see also https://www.php.net/manual/en/reserved.variables.session.php
       $_SESSION['user_ID'] = $user->ID;
       // redirect to the home page after a successful login. 
-      Router::redirect('/');
+      Router::redirect( App::root() );
     } 
+    App::notice("Check your password.");
   } 
   // generate a notice that the login was not successful. 
   App::notice("Login Failed");
