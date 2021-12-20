@@ -11,17 +11,17 @@
         
 
         if ( App::User() ){
-          $item = new NavItem('Meows', '/');
+          $item = new NavItem('Meows', App::root().'/');
           echo $item->render();
-          $item = new NavItem('Cats', '/cats');
+          $item = new NavItem('Cats', App::root().'/cats');
           echo $item->render(); 
-          $item = new NavItem(App::User()->FullName, '/profile');
+          $item = new NavItem(App::User()->FullName, App::root().'/profile');
           echo $item->render();  
-          $item = new NavItem('Logout', '/logout');
+          $item = new NavItem('Logout', App::root().'/logout');
           echo $item->render();
         }
         else{
-          $item = new NavItem('Home', '/');
+          $item = new NavItem('Home', App::root().'/');
           echo $item->render();
         }
 
