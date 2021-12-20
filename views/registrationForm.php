@@ -14,7 +14,7 @@
         <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
           <!-- note the form's action means that is is submitting to /register 
           You can check the /register route to see what happens next. -->
-            <form method="post" action="/register">
+            <form method="post" action="<?= App::root(); ?>/register">
               <label class="text-muted">Let's get started.</label>
               <input class="form-control form-control-lg my-1" type="text" name="FullName" placeholder="Full Name" required>
               <input class="form-control form-control-lg my-1" type="email" name="Email" placeholder="Email Address" required>
@@ -34,7 +34,7 @@
               </div>
 
               <button class="btn btn-info btn-lg btn-block my-3" type="submit" name="Register" value="Register">Register</button>
-              <p class="text-center text-muted">Already Have an Account? <a href="/login">Login Here</a>.</p>
+              <p class="text-center text-muted">Already Have an Account? <a href="<?= App::root(); ?>/login">Login Here</a>.</p>
 
               
 
