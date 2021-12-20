@@ -37,7 +37,7 @@ nav{
 }
 
 #banner{
-  background-image: url(/images/publicBanner.jpg);
+  background-image: url(images/publicBanner.jpg);
   background-size: cover;
   background-position: 50% 50%;
   height: 300px;
@@ -45,7 +45,7 @@ nav{
 
 
 #userBanner{
-  background-image: url(/images/userBanner.jpg);
+  background-image: url(images/userBanner.jpg);
   background-size: cover;
   background-position: 50% 50%;
   min-height: 400px;
