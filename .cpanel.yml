@@ -5,6 +5,6 @@ deployment:
  # Copy Repository to MeowBase folder
  - cp -R * ~/MeowBase
  # remove existing references to MeowBase in APahce's public_html folder
- rm -rf ~/public_html/MeowBase
+ - rm -rf ~/public_html/MeowBase
  # Make a symbolic link from Apache's public_html folder to MeowBase's public folder.
  - ln -s ~/MeowBase/public ~/public_html/MeowBase
