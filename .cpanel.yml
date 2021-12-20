@@ -1,7 +1,10 @@
 deployment:
  tasks:
  # Make a MeowBase folder  in the user's home directory. 
- - mkdir -p ~/public_html/MeowBase
+ - mkdir -p ~/MeowBase
  # Copy Repository to MeowBase folder
- - cp -R * ~/public_html/MeowBase
- # Make sure that Apache can access the folder
+ - cp -R * ~/MeowBase
+ # remove existing references to MeowBase in APahce's public_html folder
+ rm -rf ~/public_html/MeowBase
+ # Make a symbolic link from Apache's public_html folder to MeowBase's public folder.
+ - ln -s ~/MeowBase/public ~/public_html/MeowBase
