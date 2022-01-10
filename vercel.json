@@ -6,9 +6,10 @@
   },
   "trailingSlash": true ,
   "rewrites": [
+    { "source": "/index.php", "destination": "/api/index.php" },
     { "source": "/styles.css", "destination": "/public/styles.css" },
     { "source": "/icon.png", "destination": "/public/icon.png" },
     { "source": "/images/(.*)", "destination": "/public/images/$1" },
-    { "source": "*",  "destination": "/api/index.php" }
+    { "source": "(.*)",  "destination": "/api/index.php" }
   ]
 }
