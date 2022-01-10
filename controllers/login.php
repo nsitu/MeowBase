@@ -5,7 +5,7 @@
 // if so it will be foundin the $_POST array 
 // see also: https://www.php.net/manual/en/reserved.variables.post.php
 
-if ( $_POST['Login'] ) {
+if ( array_key_exists('Login', $_POST ) {
   // fetch a user from the database whose  email matches the provided one
   if ( $user = User::fromColumn('Email', $_POST['Email'])){
     // check whether the user's password matched the submitted password. 
