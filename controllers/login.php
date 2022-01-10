@@ -24,6 +24,6 @@ if ( array_key_exists('Login', $_POST ) ) {
 
 // load the login form view.
 App::set("PageTitle", "Login");
-include '../views/loginForm.php';
+include __DIR__.'/../views/loginForm.php';
 
 ?>
