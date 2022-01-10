@@ -6,7 +6,7 @@ class Router{
   // start: this function is called on index.php to get the ball rolling
   public static function start(){
     App::log('Router Starting.'); 
-    include "../controllers/".self::getRoute();
+    include __DIR__ . "/../controllers/".self::getRoute();
     
   }
 
