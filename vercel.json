@@ -4,16 +4,10 @@
       "runtime": "vercel-php@0.4.0"
     }
   },
-  "routes": [
-    { "src": "/styles.css", "dest": "/public/styles.css" },
-    { "src": "/icon.png", "dest": "/public/icon.png" },
-    {
-        "src": "/images/(.*)",
-        "headers": {
-          "cache-control": "s-maxage=604800"
-        },
-        "dest": "/public/images/$1"
-    },
-    { "src": "/(.*)",  "dest": "/api/index.php" }
+  "rewrites": [
+    { "source": "/styles.css", "destination": "/public/styles.css" },
+    { "source": "/icon.png", "destination": "/public/icon.png" },
+    { "source": "/images/(.*)", "destination": "/public/images/$1" },
+    { "source": "/(.*)",  "destination": "/api/index.php" }
   ]
 }
