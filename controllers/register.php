@@ -5,7 +5,7 @@
 // if so it will be foundin the $_POST array 
 // see also: https://www.php.net/manual/en/reserved.variables.post.php
 
-if ($_POST['Register']){
+if ( array_key_exists( 'Register', $_POST ) ){
 
   
  
