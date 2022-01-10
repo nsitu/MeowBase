@@ -8,7 +8,9 @@
   
 // Autoload Classes 
 spl_autoload_register(function($class_name){
-    include '../classes/'.$class_name . '.php';
+    $file = __DIR__.'/../classes/'.$class_name . '.php';
+    var_dump($file);
+    include $file;
 });
 
 // Start Session
