@@ -52,6 +52,6 @@ if ( array_key_exists( 'Register', $_POST ) ){
 // Show a registration form.
 App::set("PageTitle", "Register");
  
-include '../views/registrationForm.php';
+include __DIR__.'/../views/registrationForm.php';
 
 ?>
