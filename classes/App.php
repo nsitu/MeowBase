@@ -39,7 +39,7 @@ class App{
 
   // retrieve a value from the data store
   static function get($key){
-   return ( array_key_exists($key, self::$data) ? self::$data[$key] : null;
+   return ( array_key_exists($key, self::$data) ) ? self::$data[$key] : null;
   }
 
   // set a value in the data store
