@@ -15,7 +15,7 @@ class NavItem{
       return <<<HTML
         <li>
           <a class="dropdown-item $this->style" href="$this->href">
-            $this->icon<span class="$this->type">$this->name</span>
+            $this->icon<span>$this->name</span>
           </a>
         </li>
       HTML;
@@ -24,7 +24,7 @@ class NavItem{
       return <<<HTML
         <li class="nav-item">
           <a class="nav-link $this->style" href="$this->href">
-            $this->icon<span class="$this->type">$this->name</span></a>
+            $this->icon<span>$this->name</span></a>
         </li>
       HTML;
     }
