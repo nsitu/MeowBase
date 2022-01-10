@@ -98,7 +98,7 @@ class App{
 
   // If a user is logged in, fetch their details and store them in App:User
   static function User(){  
-    if ($_SESSION['user_ID'] && !self::$User  ){ 
+    if (array_key_exists('user_ID', $_SESSION) && !self::$User  ){ 
         self::$User = User::fromID($_SESSION['user_ID']);        
     }
     return self::$User;
