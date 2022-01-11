@@ -44,6 +44,8 @@ class Router{
   public static function redirect($url){
     // in PHP a redirect is done by modifying the header location:
     header("Location: ".$url);
+    debug_print_backtrace();
+    exit;
   }
  
 }
