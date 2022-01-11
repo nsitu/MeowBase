@@ -3,12 +3,7 @@
 class App{
 
   public static $pdo = null ;      // a place to store the database connection
- 
-  // a place to store app-wide variables. 
-  public static $data = [
-    'root'=>'https://'.$_SERVER['HTTP_HOST']
-  ];     
- 
+  public static $data = null;     // a place to store app-wide variables. 
   public static $notices = null;  // a place to store user notices
   public static $log = null;  // a place to store user notices
   public static $User = null;      // a place to store the logged in user here.
