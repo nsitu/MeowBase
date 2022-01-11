@@ -15,9 +15,9 @@ spl_autoload_register(function($class_name){
 // Start Session
 session_start();
 
-// Cnofigure a Subfolder on the URL to use for deployment
-// comment this out if you want to use top level as root.
-// App::set('root', '/MeowBase');
+// Configure the root URL for the site. 
+// Can be customized to point to a subfolder.
+App::set('root', 'https://'.$_SERVER['HTTP_HOST']);
 
 // Store some info about our app name 
 // to be retrieved by the view
