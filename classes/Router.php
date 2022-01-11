@@ -21,7 +21,7 @@ class Router{
     // Here we check if the user is logged in. 
     // If they are, a bunch of new  routes are possible.
     if ( App::User() ){
-      if ( $_FILES['file'] ) return "upload.php";  
+      if ( array_key_exists('file', $_FILES ) return "upload.php";  
       if (Request::url_starts_with('paws')) return "paws.php";
       if (Request::url_starts_with('cats')) return "cats.php";
       if (Request::url_starts_with('comments')) return "comments.php";
