@@ -1,12 +1,10 @@
 {
   "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.4.0"
-    }
+    "api/*.php": { "runtime": "vercel-php@0.4.0" },
+    "public/*.php": { "runtime": "vercel-php@0.4.0" }
   },
   "trailingSlash": true ,
   "rewrites": [
-    { "source": "/index.php", "destination": "/api/index.php" },
     { "source": "/styles.css", "destination": "/public/styles.css" },
     { "source": "/icon.png", "destination": "/public/icon.png" },
     { "source": "/images/(.*)", "destination": "/public/images/$1" },
