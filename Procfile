@@ -4,5 +4,4 @@
 
 web: vendor/bin/heroku-php-apache2 public/
 
-# ALternate version to pass along our Apache configuration file
-# web: vendor/bin/heroku-php-apache2 -C apache_app.conf public/
+# See also:  /public/.htaccess
