@@ -1,0 +1,8 @@
+{
+    "name": "nsitu/MeowBase",
+    "type": "project",
+    "description": "Social Network for Cats",
+    "require": {
+        "php": "^7.3|^8.0"
+    }  
+}
