@@ -6,7 +6,7 @@ class App{
  
   // a place to store app-wide variables. 
   public static $data = [
-    'root'=>'/'
+    'root'=>'https://'.$_SERVER['HTTP_HOST']
   ];     
  
   public static $notices = null;  // a place to store user notices
