@@ -3,6 +3,6 @@
     "type": "project",
     "description": "Social Network for Cats",
     "require": {
-        "php": "^7.3|^8.0"
+        "php": "^8.0"
     }  
 }
